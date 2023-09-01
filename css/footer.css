@@ -1,0 +1,239 @@
+.footer article:first-of-type {
+  background-color: var(--alternative-background-color);
+  padding-bottom: 30px;
+}
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__container > div {
+  padding: 0 15px 0 15px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__info-menu,
+.footer__shop-menu,
+.footer_copyright-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__contact-icons_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__subtitle,
+.footer__divider,
+.footer__link-container,
+.footer__contact-address,
+.contact-icons_container,
+.footer__info-menuitem,
+.footer__shop-menuitem,
+.footer__button {
+  margin: 10px 5px;
+}
+
+.footer__subtitle {
+  font-family: var(--font-h);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.footer__divider {
+  background-color: var(--ui-brand-color);
+  width: 71px;
+  height: 2px;
+  border: none;
+}
+
+.footer__copyright-wrapper {
+  background-color: var(--copyright-background-color);
+}
+
+.footer__link,
+.footer__contact-address {
+  text-decoration: none;
+  color: var(--text-color-dark);
+}
+
+.footer__info-menuitem,
+.footer__shop-menuitem {
+  list-style-type: none;
+}
+
+.footer__info-menuitem .footer__link,
+.footer__shop-menuitem .footer__link {
+  font-weight: 900;
+}
+
+.footer__icon {
+  margin: 7px;
+}
+
+.footer_copyright-text {
+  margin: 20px 7px;
+  font-size: 14px;
+}
+
+.footer__instagram-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer__button {
+  border: none;
+  cursor: pointer;
+}
+
+.footer__thumbnail {
+  object-fit: cover;
+  width: inherit;
+}
+
+.footer__instagram-expanded-outer {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 1);
+  transition: opacity 1s;
+  user-select: none;
+}
+
+.footer__instagram-expanded-wrapper {
+  display: flex;
+  flex-direction: column;
+  background:none;
+}
+
+.footer__instagram-expanded-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  opacity: 0.5;
+  background:none;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 9997;
+}
+
+.footer__instagram-zoomin-btn, 
+.footer__instagram-zoomout-btn, 
+.footer__instagram-close-btn {
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+
+.footer__instagram-close-btn {
+  cursor: pointer;
+}
+
+.footer__instagram-expanded-images {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100wv;
+}
+
+.footer__instagram-images-wraper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background:none;
+  height: 100vh;
+
+}
+
+.footer__instagram-expanded-left, 
+.footer__instagram-expanded-right {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 3%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+}
+
+.footer__instagram-expanded-left {
+  position: fixed;
+  left: 0;
+  z-index: 9995;
+}
+.footer__instagram-expanded-right {
+  position: fixed;
+  right: 0;
+  z-index: 9995;
+}
+
+.footer__instagram-left-arrow, 
+.footer__instagram-right-arrow {
+  width: 25px;
+  height: 35px;
+  margin: 15px;
+}
+
+.footer__instagram-large-image {
+  position: fixed;
+  left: calc(50% - min(100vh / 2, 100vw / 2));
+  overflow: hidden;
+  opacity: 1 !important;
+}
+
+.footer__instagram-large-img {
+  height: min(100vh, 100vw);
+  max-height: 100vh;
+  padding: 10px;
+  transition: all 300ms;
+  opacity: 1 !important;
+  z-index: 9990;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__container {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 15px;
+  }
+
+  .footer__container > div {
+    align-items: flex-start;
+    flex-basis: 25%;
+    padding: 0 5px;
+  }
+
+  .footer__info-menu,
+  .footer__shop-menu,
+  .footer_copyright-container {
+    align-items: flex-start;
+  }
+
+  .footer__instagram-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer_copyright-container {
+    padding: 0 20px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer__instagram-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

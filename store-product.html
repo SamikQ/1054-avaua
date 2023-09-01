@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CaliWines - store</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/store-product.css" />
+  </head>
+
+  <body>
+    <header data-include="partials/header.partial.html"></header>
+    <main class="store-product__main">
+      <a href="store-home.html" class="storeproduct__link">Store homepage</a>
+      <div class="storeproduct__outer-container">
+        <div class="storeproduct__imgs-container">
+          <div class="storeproduct__largeimg">
+            <div class="storeproduct__leftarrow-container">
+              <img
+                class="storeproduct__arrow"
+                src="img/storeproduct-leftarrow.svg"
+                alt="Left arrow"
+              />
+            </div>
+            <a href="#" class="storeproduct__link"
+              ><img class="storeproduct__image" src = "img/favicon.png" alt="Bottle of some wine"/></a>
+            <div class="storeproduct__rightarrow-container">
+              <img
+                class="storeproduct__arrow"
+                src="img/storeproduct-rightarrow.svg"
+                alt="Right arrow"
+              />
+            </div>
+          </div>
+          <a href="#" class="storeproduct__link"
+            ><img class="storeproduct__thumbnail" src = "img/favicon.png" alt="Bottle of some wine"/></a>
+        </div>
+        <div class="storeproduct__maincontainer">
+          <p class="storeproduct__instockindicator"></p>
+          <h4 class="storeproduct__productname"></h4>
+          <h4 class="storeproduct__productcodetext">
+            Product code <span class="storeproduct__productcode"></span>
+          </h4>
+          <p class="storeproduct__pricetext">
+            <span class="storeproduct__price"></span>
+          </p>
+
+          <div action="" class="storeproduct__form">
+            <div class="storeproduct__form-inputcontainer">
+              <input class="storeproduct__form-input" type="text" name="quantity" value=1 required/>
+              <div class="storeproduct__input-arrows-box">
+                <img class="storeproduct__form-uparrow" src="img/storeproduct-uparrow.svg" alt="Up arrow"/>
+                <img class="storeproduct__form-downarrow" src="img/storeproduct-uparrow.svg" alt="Down arrow"/>
+              </div>
+            </div>
+            <div class="storeproduct__form-submitcontainer">
+              <a class="button storeproduct__form-submit add-btn" href="#">Add to cart</a>
+            </div>
+          </div>
+          <div class="storeproduct__subtitle-container">
+            <p class="storeproduct__subtitle">DESCRIPTION</p>
+            <hr class="storeproduct__divider" />
+          </div>
+          <p class="storeproduct__description"></p>
+        </div>
+      </div>
+    </main>
+    <footer data-include="partials/footer.partial.html"></footer>
+    <section data-include="partials/cart.partial.html"></section>
+    <section data-include="partials/cart-badge.partial.html"></section>
+    <script src="https://unpkg.com/html-data-include@3.3.3/html-data-include.js"></script>
+    <script type="module" src="js/store-product.js"></script>
+  </body>
+</html>

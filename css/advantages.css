@@ -1,0 +1,134 @@
+.advantages {
+    padding: 50px 24px 90px 24px;
+}
+
+.advantages__title-description {
+    font-family: var(--font-cursive);
+    font-size: 14px;
+    color: var(--ui-brand-color);
+}
+
+.advantages__title-head {
+    font-size: 34px;
+    color: var(--text-color);
+    font-family: var(--font-h);
+    margin-top: 20px;
+    line-height: 44.2px;
+    letter-spacing: -0.68px;
+}
+
+.advantages__title-info {
+    margin-top: 20px;
+    font-weight: 400;
+    font-family: var(--font-p);
+    justify-self: center;
+    line-height: 30.6px;
+}
+
+.advantages__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 24px;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+.advantages__title-info {
+    font-size: 18px;
+    text-align: center;
+}
+
+.advantages__title-head {
+    font-weight: 400;
+}
+
+.advantages__title-image {
+    padding-top: 7.438px;
+}
+
+.advantages__info {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 45px 0 0;
+    padding: 0 15px;
+}
+
+.topic__title {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.topic__divider {
+    padding: 15px 0;
+}
+
+.topic__text {
+    color: var(--text-color-dark);
+}
+
+.topic__spacer {
+    height: 30px;
+    background-color: transparent;
+}
+
+.advantages__info-mider {
+    margin-top: 50px;
+    padding: 0 15px;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.advantages__info-right {
+    margin-top: 50px;
+    padding: 0 15px;
+}
+
+.topic__text {
+    font-weight: 400;
+    line-height: 25.6px;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .advantages {
+        padding: 50px 32px 90px 32px;
+    }
+
+    .advantages__title-description {
+        font-size: 21px;
+    }
+
+    .advantages__title-head {
+        font-size: 41px;
+    }
+
+    .advantages__info {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .advantages__info-img {
+        display: block;
+        padding: 15px;
+    }
+
+    .advantages__info-mider {
+        margin-top: 0;
+    }
+
+    .advantages__info-right {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .advantages__title-description {
+        font-size: 28px;
+    }
+
+    .advantages__title-head {
+        font-size: 48px;
+    }
+}

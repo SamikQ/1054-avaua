@@ -1,0 +1,141 @@
+.video {
+    padding: 100px 0;
+    background-image: url(../img/video-bg.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    flex-basis: 100%;
+}
+
+.video__section-inner {
+    display: block;
+    padding: 0 24px;
+}
+
+.video__block-history {
+    font-family: var(--font-cursive);
+    font-size: 14px;
+    color: var(--ui-brand-color);
+}
+
+.video__block-title {
+    font-family: var(--font-h);
+    margin-top: 20px;
+    font-size: 58px;
+    font-weight: 400;
+}
+
+.video__block-image {
+    display: flex;
+    margin-top: 35px;
+}
+
+.video__block-text {
+    display: block;
+    margin-top: 20px;
+    font-family: var(--font-p);
+    font-weight: 500;
+    font-stretch: 100%;
+    line-height: 25.6px;
+}
+
+.video__youtube {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 35px;
+    align-content: center;
+}
+
+.video__youtube-link {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.video__youtube-link:hover {
+    text-decoration: underline;
+}
+
+.play__button {
+    display: inline-block;
+    color: var(--ui-brand-color);
+    height: 50px;
+    max-width: 100%;
+}
+
+.video__play {
+    margin: 50px 0;
+}
+
+.play__icon {
+    display: grid;
+    min-height: 50px;
+}
+
+.play__text {
+    font-weight: 700;
+    font-family: var(--font-p);
+    padding-top: 31px;
+}
+
+@media (min-width: 768px) {
+    .video {
+        padding: 132.5px 0;
+    }
+
+    .video__section-inner {
+        padding: 0 32px;
+    }
+
+    .inner__grid {
+        display: grid;
+        grid-template-columns: 33% 16% 50%;
+    }
+
+    .video__block-history {
+        font-size: 21px;
+    }
+
+    .video__block-title {
+        font-size: 71px;
+        text-align: left;
+    }
+
+    .video__youtube-link {
+        display: inline-block;
+        margin: 10px;
+    }
+
+    .video__play {
+        margin: 0;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .play__button {
+        height: 70px;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .video {
+        padding: 165px 0;
+    }
+
+    .video__section-inner {
+        padding: 0 40px;
+    }
+
+    .video__block-history {
+        font-size: 28px;
+    }
+
+    .video__block-title {
+        font-size: 84px;
+    }
+}

@@ -1,0 +1,120 @@
+#awards {
+    padding: 50px 24px 20px 24px;
+    font-weight: 600;
+}
+
+.awards__header {
+    text-align: center;
+}
+
+.awards__part-name {
+    color: var(--ui-brand-color);
+    font-family: var(--font-cursive);
+    font-size: 14px;
+}
+
+.awards__title {
+    margin-top: 20px;
+    font-family: var(--font-h);
+    font-size: 34px;
+}
+
+.awards__grape-logo-decor {
+    display: block;
+    margin: 25px auto 0 auto;
+    padding-top: 7.438px;
+}
+
+.awards__subtitle {
+    margin-top: 20px;
+    font-size: 18px;
+    font-family: var(--font-p);
+    line-height: 26px;
+}
+
+.awards__prizes {
+    margin-top: 20px;
+    line-height: 26px;
+}
+
+.awards__prizes__list {
+    margin: 0 -15px;
+    padding: 0 15px;
+    list-style: none;
+}
+
+.awards__award-name {
+    margin-top: 20px;
+    font-size: 18px;
+    font-family: var(--font-p);
+}
+
+.awards__year-take-award {
+    margin-top: 20px;
+    font-size: 22px;
+    font-family: var(--font-h);
+}
+
+.awards__text-about-award {
+    margin: 20px 0 20px 0;
+    font-size: 16px;
+    font-family: var(--font-p);
+    color: var(--text-color-dark);
+}
+
+@media (min-width: 768px) {
+    .awards__part-name {
+        font-size: 21px;
+    }
+
+    .awards__title {
+        font-size: 41px;
+    }
+
+    .awards__fine-wines {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 3fr;
+        gap: 15px;
+        text-align: left;
+        align-items: center;
+    }
+
+
+    .awards__orange-wine-fund {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 3fr;
+        gap: 15px;
+        text-align: left;
+        align-items: center;
+    }
+
+    .awards__wine-corporation {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 3fr;
+        gap: 15px;
+        text-align: left;
+        align-items: center;
+    }
+
+    .awards__wine-finds {
+        margin-top: 30px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 3fr;
+        gap: 15px;
+        text-align: left;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .awards__part-name {
+        font-size: 28px;
+    }
+
+    .awards__title {
+        font-size: 48px;
+    }
+}
