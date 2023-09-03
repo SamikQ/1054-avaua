@@ -6,7 +6,7 @@ export class ProductsService {
     }
   // кешування продуктів, якщо вони ще не були завантажені.
   async getProducts() {
-    if (!this.getProducts) {
+    if (!this.products) {
       this.products = await (await fetch("api/products.json")).json();
       return this.products;
     }

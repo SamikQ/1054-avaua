@@ -1,9 +1,9 @@
 [
     {
+        "id": "18",
         "name": "Cabernet",
         "type": "red",
         "bestDeal": true,
-        "code": "18",
         "price": 17,
         "currency": "USD",
         "inStock": true,
@@ -13,10 +13,10 @@
         "description": "If you don't want which red wine to buy, think of this Cabernet. It has a very deep dark purple color and opens with boysenberry, bourbon, and vanilla aromas. Then you'll feel brown sugar, cocoa, spices, and currants. It's a wine with a really rich taste."
     },
     {
+        "id": "23",
         "name": "Pinot Grigio",
         "type": "white",
         "bestDeal": true,
-        "code": "23",
         "price": 10,
         "currency": "USD",
         "inStock": true,
@@ -29,7 +29,7 @@
         "name": "PinotNoir",
         "type": "red",
         "bestDeal": false,
-        "code": "20",
+        "id": "20",
         "price": 12,
         "currency": "USD",
         "inStock": true,
@@ -42,7 +42,7 @@
         "name": "Riesling",
         "type": "white",
         "bestDeal": false,
-        "code": "24",
+        "id": "24",
         "price": 16,
         "currency": "USD",
         "inStock": true,
