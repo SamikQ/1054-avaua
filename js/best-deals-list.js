@@ -1,5 +1,5 @@
-// import * as catalogue from './products-catalogue.js'
-import { ProductsService } from "./products-service.js";
+// import { ProductsService } from "./products-service.js";
+// import { Cart } from "./cart.js";
 
 const slides = [];
 let currentSlide = 0;
@@ -48,11 +48,11 @@ export class ProductList {
       btn.addEventListener("click", this.addProductToCart.bind(this));
     });
   }
-  addProductToCart(event) {
-    const id = event.target.dataset.id;
-    const cart = new Cart();
-    cart.addProduct(id);
-  }
+  // addProductToCart(event) {
+  //   const id = event.target.dataset.id;
+  //   const cart = new Cart();
+  //   cart.addProduct(id);
+  // }
 }
 new ProductList();
 
