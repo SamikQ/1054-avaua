@@ -12,19 +12,20 @@ export class ProductList {
         let productListDomString = '';
         const products = await this.ProductsService.getProducts();
         products.forEach(product => {
-            productListDomString += this.cCreateProductDomString(product);
+            productListDomString += this.createProductDomString(product);
         });
         this.container.innerHTML = productListDomString;
         this.addEventListeners();
     }
-    cCreateProductDomString(product) {
+    createProductDomString(product) {
         return `<article class="card col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="img/${product.image}" class="card-img-top" alt="${product.title}">
         <div class="card-body">
-            <h5 class="card-title">${product.title}</h5>
-            <p class="card-text">${product.description}</p>
-            <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#product-info-modal" data-id=${product.id}>Info</a>
-            <a href="#" class="btn btn-primary add-btn" data-id=${product.id}> ${product.price} Buy</a>
+            <div class="shop__product product">
+                <a href="store-product.html?id=${product.id}"><img src="${product.images}" alt="${product.name}"></img></a>
+                <a href="store-product.html" class="product__name">${product.name}</a>
+                <p class="product__price">${product.price.toFixed(2)}${product.currency}</p>
+                <a href="#" class="button btn-primary add-btn" data-id=${product.id}>Buy</a>
+            </div>
         </div>
 </article>`;
     }
@@ -49,9 +50,9 @@ new ProductList();
 //         const content =
 //             `<div class="shop__product product">
 //                 <div class="shop__product product">
-//                 <a href="store-product.html?id=${products[i].code}"><img src="${products[i].images[0]}" alt="${products[i].name}"></img></a>
-//                 <a href="store-product.html" class="product__name">${products[i].name}</a>
-//                 <p class="product__price">${products[i].price.toFixed(2)}${products[i].currency}</p>
+//                 <a href="store-product.html?id=${product.code}"><img src="${product.images}" alt="${product.name}"></img></a>
+//                 <a href="store-product.html" class="product__name">${product.name}</a>
+//                 <p class="product__price">${product.price.toFixed(2)}${product.currency}</p>
 //                 <a class="button add-btn" href="#cart-badge"><strong>Add to cart</strong></a>
 //                 </div>
 //             </div>`;
