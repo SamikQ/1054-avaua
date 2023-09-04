@@ -55,20 +55,23 @@
     width: auto;
 }
 
-.cart__order {
-    display: block;
-    padding: 24px 15px;
+.cart-container {
+    /* display: flex; */
+}
+
+.order__column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.col-6 {
+    max-width: 10%;
 }
 
 .cart__order-topic {
     margin-bottom: 8px;
     font-size: 12px;
-}
-
-.cart__preview {
-    display: flex;
-    justify-content: baseline;
-    width: 100%;
 }
 
 .info__quantity-change {

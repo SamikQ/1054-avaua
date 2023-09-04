@@ -1,51 +1,54 @@
-<section class="cart__body" title="Order form for purchasing">
-    <div class="cart__content">
-        <div class="cart__header">
-            <h3 class="cart__header-title">
-                Shopping cart
-            </h3>
-            <span class="cart__header-close" style="color:#261e1c"><svg width="16" viewBox="0 0 25 25"
-                    xmlns="http://www.w3.org/2000/svg" style="max-width:100%" height="100%">
-                    <path
-                        d="M19.7 18.3c.4.4.4 1 0 1.4-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3L12 13.4l-6.3 6.3c-.4.4-1 .4-1.4 0-.2-.2-.3-.4-.3-.7 0-.3.1-.5.3-.7l6.3-6.3-6.3-6.3c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l6.3 6.3 6.3-6.3c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L13.4 12l6.3 6.3z"
-                        fill="currentColor"></path>
-                    <mask id="a64cd08107f10f0000e5c6411" maskUnits="userSpaceOnUse" x="4" y="4" width="16" height="16"
-                        fill="currentColor">
+<section class="cart__body cart__hidden" title="Order form for purchasing">
+    <div class="cart cart__hidden">
+        <div class="cart__content  cart__hidden">
+            <div class="cart__header">
+                <h3 class="cart__header-title">
+                    Shopping cart
+                </h3>
+                <span class="cart__header-close" style="color:#261e1c"><svg width="16" viewBox="0 0 25 25"
+                        xmlns="http://www.w3.org/2000/svg" style="max-width:100%" height="100%">
                         <path
                             d="M19.7 18.3c.4.4.4 1 0 1.4-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3L12 13.4l-6.3 6.3c-.4.4-1 .4-1.4 0-.2-.2-.3-.4-.3-.7 0-.3.1-.5.3-.7l6.3-6.3-6.3-6.3c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l6.3 6.3 6.3-6.3c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L13.4 12l6.3 6.3z"
                             fill="currentColor"></path>
-                    </mask>
-                    <g mask="url(#a64cd08107f10f0000e5c6411)" fill="currentColor">
-                        <path fill="currentColor" d="M0 0h24v24H0z"></path>
-                    </g>
-                </svg>
-            </span>
-        </div>
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cartLabel">Cart</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="cart-product-list-container cart-container"></div>
-                    <hr>
-                    <div class="container">
-                        <form class="form-contacts">
-                            <div class="form-group row">
-                                <label for="client-name" class="col-4 col-form-label">Your name:</label>
-                                <input class="form-control col-8" type="text" id="client-name" name="name" required>
-                            </div>
-                            <div class="form-group row">
-                                <label for="client-email" class="col-4 col-form-label">Your email:</label>
-                                <input class="form-control col-8" type="email" id="client-email" name="email" required>
-                            </div>
-                        </form>
+                        <mask id="a64cd08107f10f0000e5c6411" maskUnits="userSpaceOnUse" x="4" y="4" width="16"
+                            height="16" fill="currentColor">
+                            <path
+                                d="M19.7 18.3c.4.4.4 1 0 1.4-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3L12 13.4l-6.3 6.3c-.4.4-1 .4-1.4 0-.2-.2-.3-.4-.3-.7 0-.3.1-.5.3-.7l6.3-6.3-6.3-6.3c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l6.3 6.3 6.3-6.3c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L13.4 12l6.3 6.3z"
+                                fill="currentColor"></path>
+                        </mask>
+                        <g mask="url(#a64cd08107f10f0000e5c6411)" fill="currentColor">
+                            <path fill="currentColor" d="M0 0h24v24H0z"></path>
+                        </g>
+                    </svg>
+                </span>
+            </div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cartLabel">Cart</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-primary order">Order</button>
+                    <div class="modal-body">
+                        <div class="cart-product-list-container cart-container"></div>
+                        <hr>
+                        <div class="container">
+                            <form class="form-contacts">
+                                <div class="form-group row">
+                                    <label for="client-name" class="col-4 col-form-label">Your name:</label>
+                                    <input class="form-control col-8" type="text" id="client-name" name="name" required>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="client-email" class="col-4 col-form-label">Your email:</label>
+                                    <input class="form-control col-8" type="email" id="client-email" name="email"
+                                        required>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-primary order">Order</button>
+                    </div>
                 </div>
             </div>
         </div>
