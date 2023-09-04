@@ -7,6 +7,7 @@ export class ProductList {
     this.currentDisplayedSlide = 0;
     this.currentCarouselSlide = 0;
     this.slides = [];
+    this.cart = new Cart();
     this.renderSlide();
     this.visual();
     this.fetchProducts();
@@ -45,20 +46,20 @@ export class ProductList {
     for (let i = this.currentCarouselSlide; i < this.currentCarouselSlide + 3; i++) {
       const productIndex = (i + this.slides.length) % this.slides.length;
       const product = this.slides[productIndex];
-      
+
       if (product) {
         productDomString += this.createProductDomString(product);
       }
     }
     productsContainer.innerHTML = productDomString;
     this.currentDisplayedSlide = this.currentCarouselSlide;
+    this.addEventListeners();
   }
 
   createProductDomString(product) {
     if (!product || typeof product.id === 'undefined') {
       return '';
     }
-
     return `
         <div class="shop__product product">
           <a href="store-product.html?id=${product.id}">
@@ -82,8 +83,7 @@ export class ProductList {
 
   addProductToCart(event) {
     const id = event.target.dataset.id;
-    const cart = new Cart();
-    cart.addProduct(id);
+    this.cart.addProduct(id);
   }
 }
 new ProductList();
