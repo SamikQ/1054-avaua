@@ -131,36 +131,18 @@ export class Cart {
 }
 new Cart();
 
-// const orderForm = document.querySelector('.cart');
+const orderForm = document.querySelector('.cart');
 
-// document.querySelector('.cart-badge').addEventListener('click', () => {
-//     orderForm.classList.remove('cart__hidden');
-//     document.querySelector('.cart-badge').classList.add('hidden');
-// });
+document.querySelector('.cart-badge').addEventListener('click', () => {
+    orderForm.classList.remove('cart__hidden');
+    document.querySelector('.cart__content').classList.remove('cart__hidden');
+    document.querySelector('.cart-badge').classList.add('hidden');
+});
 
-// document.querySelector('.cart__header-close').addEventListener('click', () => {
-//     orderForm.classList.add('cart__hidden');
-//     document.querySelector('.cart-badge').classList.remove('hidden');
-// });
+document.querySelector('.cart__header-close').addEventListener('click', () => {
+    orderForm.classList.add('cart__hidden');
+    document.querySelector('.cart__content').classList.add('cart__hidden');
+    document.querySelector('.cart-badge').classList.remove('hidden');
+});
 
-/* <div class="cart__preview">
-    <picture class="cart__preview-img">
-        <img src="img/cart-preview-wine.png" alt="Preview wine">
-    </picture>
-    <article class="cart__preview-info info">
-        <div>
-            <p class="info__name">
-                bottle of wine
-            </p>
-        </div>
-        <div class="info__quantity-container">
-            <p class="info__amount">
-                12,00USD
-            </p>
-            <input class="info__quantity-change" type="number" value="1">
-        </div>
-    </article>
-    <picture>
-        <img class="cart-preview-remove" src="img/remove-icon.png" alt="remove icon">
-    </picture>
-</div> */
+
