@@ -1,5 +1,5 @@
-// import { ProductsService } from "./products-service.js";
-// import { Cart } from "./cart.js";
+import { ProductsService } from "./products-service.js";
+import { Cart } from "./cart.js";
 
 const slides = [];
 let currentSlide = 0;
@@ -8,7 +8,7 @@ nextButton.addEventListener("click", nextSlide);
 const prevButton = document.querySelector(".best-deals__arrowR");
 prevButton.addEventListener("click", prevSlide);
 
-// renderProduct(catalogue.products)
+renderProduct(catalogue.products)
 
 export class ProductList {
   constructor() {
@@ -36,45 +36,45 @@ export class ProductList {
         <p class="product__price">${product.price.toFixed(2)}${
       product.currency
     }</p>
-        <a class="button add-btn" href="#cart-badge" data-id=${product.id}><strong>Add to cart</strong></a>
+        <a class="button add-btn" href="#cart-badge" data-id=${product.id}>Add to cart</a>
         </div>
     </div>`;
   }
   addEventListeners() {
-    // document.querySelectorAll('.btn-info').forEach(btn => {
-    //     btn.addEventListener('click', this.showProductInfo.bind(this));
-    // });
+    document.querySelectorAll('.btn-info').forEach(btn => {
+        btn.addEventListener('click', this.showProductInfo.bind(this));
+    });
     document.querySelectorAll(".add-btn").forEach((btn) => {
       btn.addEventListener("click", this.addProductToCart.bind(this));
     });
   }
-  // addProductToCart(event) {
-  //   const id = event.target.dataset.id;
-  //   const cart = new Cart();
-  //   cart.addProduct(id);
-  // }
+  addProductToCart(event) {
+    const id = event.target.dataset.id;
+    const cart = new Cart();
+    cart.addProduct(id);
+  }
 }
 new ProductList();
 
-// function renderProduct(products) {
-//     const productsContainer = document.querySelector('.best-deals__products');
-//     productsContainer.innerHTML = '';
-//     for (let i = 0; i < products.length; i++) {
-//         if (products[i].bestDeal) {
-//             const content =
-//                 `<div class="best-deals__product product">
-//             <div class="best-deals__product product">
-//                 <a href="store-product.html?id=${products[i].code}"><img src="${products[i].images[0]}" alt="${products[i].name}"></img></a>
-//                 <a href="store-product.html" class="product__name">${products[i].name}</a>
-//                 <p class="product__price">${products[i].price.toFixed(2)}${products[i].currency}</p>
-//                 <a class="button add-btn" href="#cart-badge"><strong>Add to cart</strong></a>
-//             </div>
-//         </div>`
-//             slides.push(content)
-//         }
-//     }
-//     renderSlide()
-// }
+function renderProduct(products) {
+    const productsContainer = document.querySelector('.best-deals__products');
+    productsContainer.innerHTML = '';
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].bestDeal) {
+            const content =
+                `<div class="best-deals__product product">
+            <div class="best-deals__product product">
+                <a href="store-product.html?id=${products[i].code}"><img src="${products[i].images[0]}" alt="${products[i].name}"></img></a>
+                <a href="store-product.html" class="product__name">${products[i].name}</a>
+                <p class="product__price">${products[i].price.toFixed(2)}${products[i].currency}</p>
+                <a class="button add-btn" href="#cart-badge">Add to cart</a>
+            </div>
+        </div>`
+            slides.push(content)
+        }
+    }
+    renderSlide()
+}
 
 function renderSlide() {
   const productsContainer = document.querySelector(".best-deals__products");
@@ -107,7 +107,7 @@ function nextSlide() {
   renderSlide();
 }
 
-// window.addEventListener('resize', renderProduct)
+window.addEventListener('resize', renderProduct)
 
 function renderIndicators() {
   const indicatorsContainer = document.querySelector(
