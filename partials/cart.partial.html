@@ -25,28 +25,35 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="cartLabel">Cart</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="cart-product-list-container cart-container"></div>
                         <hr>
-                        <div class="container">
-                            <form class="form-contacts">
-                                <div class="form-group row">
-                                    <label for="client-name" class="col-4 col-form-label">Your name:</label>
-                                    <input class="form-control col-8" type="text" id="client-name" name="name" required>
+                        <form class="form-contacts">
+                            <div class="cart__buyer-details">
+                                <p class="cart__buyer-title">Place an Order</p>
+                                <div class="cart__buyer-details-sub">
+                                    <h4 class="cart__buyer-details-subhead">Name</h4>
+                                    <input class="cart__buyer-details-input" placeholder="Your name">
                                 </div>
-                                <div class="form-group row">
-                                    <label for="client-email" class="col-4 col-form-label">Your email:</label>
-                                    <input class="form-control col-8" type="email" id="client-email" name="email"
-                                        required>
+                                <div class="cart__buyer-details-sub">
+                                    <h4 class="cart__buyer-details-subhead">Email</h4>
+                                    <input class="cart__buyer-details-input" placeholder="Your email address">
                                 </div>
-                            </form>
-                        </div>
+                                <div class="cart__buyer-details-sub">
+                                    <h4 class="cart__buyer-details-subhead">Phone</h4>
+                                    <input class="cart__buyer-details-input" placeholder="Your Phone">
+                                </div>
+                                <div class="cart__buyer-details-comment">
+                                    <h4 class="cart__buyer-details-subhead">Comment</h4>
+                                    <input class="cart__buyer-details-text" placeholder="Your comment">
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary close-btn">Close</button>
                         <button class="btn btn-primary order">Order</button>
                     </div>
                 </div>
@@ -60,29 +67,5 @@
         <div class="cart__order">
             <p class="cart__order-topic">Products</p>
             <div class="cart-product-list-container cart-container"></div>
-            <div class="cart__buyer-details">
-                <p class="cart__buyer-title">Place an Order</p>
-                <div class="cart__buyer-details-sub">
-                    <h4 class="cart__buyer-details-subhead">Name</h4>
-                    <input class="cart__buyer-details-input" placeholder="Your name">
-                </div>
-                <div class="cart__buyer-details-sub">
-                    <h4 class="cart__buyer-details-subhead">Email</h4>
-                    <input class="cart__buyer-details-input" placeholder="Your email address">
-                </div>
-                <div class="cart__buyer-details-sub">
-                    <h4 class="cart__buyer-details-subhead">Phone</h4>
-                    <input class="cart__buyer-details-input" placeholder="Your Phone">
-                </div>
-                <div class="cart__buyer-details-comment">
-                    <h4 class="cart__buyer-details-subhead">Comment</h4>
-                    <input class="cart__buyer-details-text" placeholder="Your comment">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Close</button>
-        <button class="btn btn-primary order">Order</button>
     </div>
 </div> -->

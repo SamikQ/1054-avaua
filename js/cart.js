@@ -7,6 +7,7 @@ export class Cart {
     this.container = document.querySelector(".cart-container");
     this.productsService = new ProductsService();
     this.cart = JSON.parse(localStorage.getItem("cart") || "{}");
+    this.textContents = [];
     this.addEventListeners();
     this.renderCart();
   }
@@ -18,10 +19,10 @@ export class Cart {
     console.log("renderCart started");
     let total = 0;
     let cartDomString = `<div class="order__column">
-                                    <div class="col-6"></div>
-                                    <div class="col-5"><strong>Product</strong></div>
-                                    <div class="col-3"><strong>Price</strong></div>
-                                    <div class="col-2"><strong>Quantity</strong></div>
+                                    <div class="col__primary-6"></div>
+                                    <div class="col__primary-5"><strong>Product</strong></div>
+                                    <div class="col__primary-3"><strong>Price</strong></div>
+                                    <div class="col__primary-2"><strong>Quantity</strong></div>
                               </div>`;
     for (const productId in this.cart) {
       console.log(`Processing product with ID: ${productId}`);
@@ -46,14 +47,8 @@ export class Cart {
       );
     this.container
       .querySelectorAll(".minus")
-      .forEach((el) =>
-        el.addEventListener("click", (ev) =>
-          this.changeQuantity(ev, this.deleteProductOperation)
-        )
-      );
-    document.querySelector(".cart-badge__counter").innerHTML = Object.keys(
-      this.cart
-    ).length;
+      .forEach((el) => el.addEventListener("click", (ev) => this.changeQuantity(ev, this.deleteProductOperation)));
+      document.querySelector(".cart-badge__counter").innerHTML = Array.from(document.querySelectorAll('.col__quantity-2')).map(element => parseInt(element.textContent, 10)).reduce((total, value) => total + (isNaN(value) ? 0 : value), 0);
     if (Object.keys(this.cart).length > 0) {
         document.querySelector(".cart-badge").classList.remove("hidden");
     } else {
@@ -67,20 +62,23 @@ export class Cart {
                 <div class="col-6"><img src="${product.images}"></div>
                 <div class="col-5">${product.name}</div>
                 <div class="col-3">${product.price}</div>
-                <div class="col-2">${this.cart[product.id]}</div>
-                <div class="col-1"><button data-id=${
-                  product.id
-                } class="btn btn-sm plus">+</button></div>
                 <div class="col-1"><button data-id=${
                   product.id
                 } class="btn btn-sm minus">-</button></div>
+                <div class="col__quantity-2">${this.cart[product.id]}</div>
+                <div class="col-1"><button data-id=${
+                  product.id
+                } class="btn btn-sm plus">+</button></div>
               </div>`;
   }
   changeQuantity(ev, operation) {
     ev.stopPropagation();
     operation.call(this, ev.target.dataset.id);
-    this.saveCart();
-    this.renderCart();
+    // Виклик renderCart лише якщо клікнуто на кнопку плюс або мінус
+    if (ev.target.classList.contains('plus') || ev.target.classList.contains('minus')) {
+      this.saveCart();
+      this.renderCart();
+    }
   }
   addProductOperation(id) {
     this.cart[id] = (this.cart[id] || 0) + 1;

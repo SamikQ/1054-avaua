@@ -55,23 +55,28 @@
     width: auto;
 }
 
-.cart-container {
-    /* display: flex; */
-}
 
 .order__column {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    margin: auto;
 }
 
 .col-6 {
-    max-width: 10%;
+    max-width: 15%;
+    padding: 10px;
 }
 
 .cart__order-topic {
     margin-bottom: 8px;
     font-size: 12px;
+}
+
+.form-contacts {
+    display: flex;
+    justify-content: center;
+    max-width: 90%;
 }
 
 .info__quantity-change {
