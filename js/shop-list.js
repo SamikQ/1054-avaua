@@ -70,13 +70,16 @@ export class ProductList {
           <a class="button btn-primary add-btn" href="#" data-id="${product.id}">Add to cart</a>
         </div>`;
   }
-
+  
   addEventListeners() {
     const currentSlideProducts = document.querySelectorAll('.shop__product.product');
     currentSlideProducts.forEach(product => {
       const addBtn = product.querySelector('.add-btn');
       if (addBtn) {
-        addBtn.addEventListener('click', this.addProductToCart.bind(this));
+        addBtn.addEventListener('click', (event) => {
+          event.preventDefault(); // Відмінити виконання посилання href
+          this.addProductToCart(event);
+        });
       }
     });
   }
