@@ -12,17 +12,18 @@ export class Cart {
     this.renderCart();
   }
   addEventListeners() {
-    document.querySelector(".cart-container").addEventListener("click", this.renderCart.bind(this));
-    document.querySelector(".order").addEventListener("click", this.order.bind(this));
-  };
+    document
+      .querySelector(".cart-container")
+      .addEventListener("click", this.renderCart.bind(this));
+    document
+      .querySelector(".order")
+      .addEventListener("click", this.order.bind(this));
+  }
   async renderCart() {
     console.log("renderCart started");
     let total = 0;
     let cartDomString = `<div class="order__column">
-                                    <div class="col__primary-6"></div>
-                                    <div class="col__primary-5"><strong>Product</strong></div>
-                                    <div class="col__primary-3"><strong>Price</strong></div>
-                                    <div class="col__primary-2"><strong>Quantity</strong></div>
+                                    <div class="col__primary-5">Products</div>
                               </div>`;
     for (const productId in this.cart) {
       console.log(`Processing product with ID: ${productId}`);
@@ -47,35 +48,50 @@ export class Cart {
       );
     this.container
       .querySelectorAll(".minus")
-      .forEach((el) => el.addEventListener("click", (ev) => this.changeQuantity(ev, this.deleteProductOperation)));
-      document.querySelector(".cart-badge__counter").innerHTML = Array.from(document.querySelectorAll('.col__quantity-2')).map(element => parseInt(element.textContent, 10)).reduce((total, value) => total + (isNaN(value) ? 0 : value), 0);
+      .forEach((el) =>
+        el.addEventListener("click", (ev) =>
+          this.changeQuantity(ev, this.deleteProductOperation)
+        )
+      );
+    document.querySelector(".cart-badge__counter").innerHTML = Array.from(
+      document.querySelectorAll(".col__quantity-2")
+    )
+      .map((element) => parseInt(element.textContent, 10))
+      .reduce((total, value) => total + (isNaN(value) ? 0 : value), 0);
     if (Object.keys(this.cart).length > 0) {
-        document.querySelector(".cart-badge").classList.remove("hidden");
+      document.querySelector(".cart-badge").classList.remove("hidden");
     } else {
-        document.querySelector(".cart-badge").classList.add("hidden");
+      document.querySelector(".cart-badge").classList.add("hidden");
     }
   }
 
   createCartProductDomString(product) {
     console.log(product);
-    return `<div class="order__column" data-id="${product.id}"> 
-                <div class="col-6"><img src="${product.images}"></div>
-                <div class="col-5">${product.name}</div>
-                <div class="col-3">${product.price}</div>
-                <div class="col-1"><button data-id=${
-                  product.id
-                } class="btn btn-sm minus">-</button></div>
-                <div class="col__quantity-2">${this.cart[product.id]}</div>
-                <div class="col-1"><button data-id=${
-                  product.id
-                } class="btn btn-sm plus">+</button></div>
+    return `<div class="order__column" data-id="${product.id}">
+                <div class="order__column-product">
+                  <div class="order__column-inner">
+                      <div class="col-6"><img src="${product.images}"></div>
+                      <div class="order__column-info"> 
+                        <div class="col-5">${product.name}</div>
+                        <div class"order__column-quantity">
+                          <div class="col-3">${product.price}</div>
+                          <div class="col-1"><button data-id=${product.id} class="btn btn-sm minus">-</button></div>
+                          <div class="col__quantity-2">${this.cart[product.id]}</div>
+                          <div class="col-1"><button data-id=${product.id} class="btn btn-sm plus">+</button></div>
+                        </div>
+                      </div>
+                  </div>
+                </div> 
               </div>`;
   }
   changeQuantity(ev, operation) {
     ev.stopPropagation();
     operation.call(this, ev.target.dataset.id);
     // Виклик renderCart лише якщо клікнуто на кнопку плюс або мінус
-    if (ev.target.classList.contains('plus') || ev.target.classList.contains('minus')) {
+    if (
+      ev.target.classList.contains("plus") ||
+      ev.target.classList.contains("minus")
+    ) {
       this.saveCart();
       this.renderCart();
     }
@@ -129,18 +145,16 @@ export class Cart {
 }
 new Cart();
 
-const orderForm = document.querySelector('.cart');
+const orderForm = document.querySelector(".cart");
 
-document.querySelector('.cart-badge').addEventListener('click', () => {
-    orderForm.classList.remove('cart__hidden');
-    document.querySelector('.cart__content').classList.remove('cart__hidden');
-    document.querySelector('.cart-badge').classList.add('hidden');
+document.querySelector(".cart-badge").addEventListener("click", () => {
+  orderForm.classList.remove("cart__hidden");
+  document.querySelector(".cart__content").classList.remove("cart__hidden");
+  document.querySelector(".cart-badge").classList.add("hidden");
 });
 
-document.querySelector('.cart__header-close').addEventListener('click', () => {
-    orderForm.classList.add('cart__hidden');
-    document.querySelector('.cart__content').classList.add('cart__hidden');
-    document.querySelector('.cart-badge').classList.remove('hidden');
+document.querySelector(".cart__header-close").addEventListener("click", () => {
+  orderForm.classList.add("cart__hidden");
+  document.querySelector(".cart__content").classList.add("cart__hidden");
+  document.querySelector(".cart-badge").classList.remove("hidden");
 });
-
-

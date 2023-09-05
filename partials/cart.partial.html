@@ -1,6 +1,6 @@
-<section class="cart__body cart__hidden" title="Order form for purchasing">
-    <div class="cart cart__hidden">
-        <div class="cart__content  cart__hidden">
+<section class="cart__body" title="Order form for purchasing">
+    <div class="cart">
+        <div class="cart__content">
             <div class="cart__header">
                 <h3 class="cart__header-title">
                     Shopping cart
@@ -24,9 +24,6 @@
             </div>
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" aria-label="Close"></button>
-                    </div>
                     <div class="modal-body">
                         <div class="cart-product-list-container cart-container"></div>
                         <hr>
@@ -34,38 +31,31 @@
                             <div class="cart__buyer-details">
                                 <p class="cart__buyer-title">Place an Order</p>
                                 <div class="cart__buyer-details-sub">
-                                    <h4 class="cart__buyer-details-subhead">Name</h4>
+                                    <h4 class="cart__buyer-details-subhead">Name <span class="cart__buyer-required-star">*</span></h4>
                                     <input class="cart__buyer-details-input" placeholder="Your name">
                                 </div>
                                 <div class="cart__buyer-details-sub">
-                                    <h4 class="cart__buyer-details-subhead">Email</h4>
+                                    <h4 class="cart__buyer-details-subhead">Email <span class="cart__buyer-required-star">*</span></h4>
                                     <input class="cart__buyer-details-input" placeholder="Your email address">
                                 </div>
                                 <div class="cart__buyer-details-sub">
-                                    <h4 class="cart__buyer-details-subhead">Phone</h4>
+                                    <h4 class="cart__buyer-details-subhead">Phone <span class="cart__buyer-required-star">*</span></h4>
                                     <input class="cart__buyer-details-input" placeholder="Your Phone">
                                 </div>
                                 <div class="cart__buyer-details-comment">
                                     <h4 class="cart__buyer-details-subhead">Comment</h4>
-                                    <input class="cart__buyer-details-text" placeholder="Your comment">
+                                    <textarea class="cart__buyer-details-text" placeholder="Your comment" type="textarea"></textarea>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary close-btn">Close</button>
-                        <button class="btn btn-primary order">Order</button>
+                        <div class="modal__button-footer">
+                            <button class="btn btn-primary order button">Order</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<!-- <div class="cart__body">
-    <div class="cart__content">
-        <div class="cart__order">
-            <p class="cart__order-topic">Products</p>
-            <div class="cart-product-list-container cart-container"></div>
-    </div>
-</div> -->
