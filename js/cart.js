@@ -31,11 +31,9 @@ export class Cart {
       cartDomString += this.createCartProductDomString(product);
       total += product.price * this.cart[productId];
     }
-    cartDomString += ` <div class="order__column">
+    cartDomString += ` <div class="order__column-total">
                             <div class="col-5"><strong>TOTAL</strong></div>
-                            <div class="col-3"><strong>$${total.toFixed(
-                              2
-                            )}</strong></div>
+                            <div class="col-3"><strong>$${total.toFixed(2)}</strong></div>
                          </div>`;
     this.container.innerHTML = cartDomString;
     console.log("Container HTML updated");
@@ -68,21 +66,24 @@ export class Cart {
   createCartProductDomString(product) {
     console.log(product);
     return `<div class="order__column" data-id="${product.id}">
-                <div class="order__column-product">
-                  <div class="order__column-inner">
-                      <div class="col-6"><img src="${product.images}"></div>
-                      <div class="order__column-info"> 
-                        <div class="col-5">${product.name}</div>
-                        <div class"order__column-quantity">
-                          <div class="col-3">${product.price}</div>
-                          <div class="col-1"><button data-id=${product.id} class="btn btn-sm minus">-</button></div>
-                          <div class="col__quantity-2">${this.cart[product.id]}</div>
-                          <div class="col-1"><button data-id=${product.id} class="btn btn-sm plus">+</button></div>
-                        </div>
-                      </div>
-                  </div>
-                </div> 
-              </div>`;
+    <div class="order__column-product">
+      <div class="order__column-inner">
+        <div class="col-6"><img src="${product.images}"></div>
+        <div class="col-5">${product.name}</div>
+        <div class="order__column-info">
+          <div class="order__column-quantity">
+            <div class="col-3">${product.price}</div>
+            <div class="order__column-counter">
+              <div class="col-1"><button data-id=${product.id} class="btn btn-sm minus">-</button></div>
+              <div class="col__quantity-2">${this.cart[product.id]}</div>
+              <div class="col-1"><button data-id=${product.id} class="btn btn-sm plus">+</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>`;
   }
   changeQuantity(ev, operation) {
     ev.stopPropagation();
