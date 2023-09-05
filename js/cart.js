@@ -8,6 +8,7 @@ export class Cart {
     this.productsService = new ProductsService();
     this.cart = JSON.parse(localStorage.getItem("cart") || "{}");
     this.textContents = [];
+    this.orderForm = document.querySelector(".cart");
     this.addEventListeners();
     this.renderCart();
   }
@@ -56,11 +57,6 @@ export class Cart {
     )
       .map((element) => parseInt(element.textContent, 10))
       .reduce((total, value) => total + (isNaN(value) ? 0 : value), 0);
-    if (Object.keys(this.cart).length > 0) {
-      document.querySelector(".cart-badge").classList.remove("hidden");
-    } else {
-      document.querySelector(".cart-badge").classList.add("hidden");
-    }
   }
 
   createCartProductDomString(product) {
@@ -88,7 +84,6 @@ export class Cart {
   changeQuantity(ev, operation) {
     ev.stopPropagation();
     operation.call(this, ev.target.dataset.id);
-    // Виклик renderCart лише якщо клікнуто на кнопку плюс або мінус
     if (
       ev.target.classList.contains("plus") ||
       ev.target.classList.contains("minus")
@@ -112,6 +107,7 @@ export class Cart {
     this.saveCart();
     this.renderCart();
   }
+
   saveCart() {
     localStorage.setItem("cart", JSON.stringify(this.cart));
   }
@@ -147,15 +143,28 @@ export class Cart {
 new Cart();
 
 const orderForm = document.querySelector(".cart");
+const cartContent = document.querySelector(".cart__content");
+const cartBadge = document.querySelector(".cart-badge");
+
+// Функція, яка перевіряє, чи orderForm відкрита
+function isOrderFormOpen() {
+  return !orderForm.classList.contains("cart__hidden");
+}
 
 document.querySelector(".cart-badge").addEventListener("click", () => {
-  orderForm.classList.remove("cart__hidden");
-  document.querySelector(".cart__content").classList.remove("cart__hidden");
-  document.querySelector(".cart-badge").classList.add("hidden");
+  if (!isOrderFormOpen()) {
+    orderForm.classList.remove("cart__hidden");
+    cartContent.classList.remove("cart__hidden");
+    cartBadge.classList.add("hidden");
+  }
 });
 
 document.querySelector(".cart__header-close").addEventListener("click", () => {
-  orderForm.classList.add("cart__hidden");
-  document.querySelector(".cart__content").classList.add("cart__hidden");
-  document.querySelector(".cart-badge").classList.remove("hidden");
+  if (isOrderFormOpen()) {
+    orderForm.classList.add("cart__hidden");
+    cartContent.classList.add("cart__hidden");
+    cartBadge.classList.remove("hidden");
+  }
 });
+
+

@@ -12,4 +12,3 @@ document.addEventListener('partialsLoaded',async () => {
     // await import('./footer.js');
     // await import('./testimonials.js');
     // await import('./products-catalogue.js');
-    // import('./cart-badge.js');

@@ -10,8 +10,8 @@
 .modal__button {
     display: flex;
     background-color: var(--cart-badge-background-color);
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
 
@@ -19,8 +19,8 @@
     stroke: black;
     display: block;
     margin: auto;
-    width: 40px;
-    height: 40px;
+    width: 26px;
+    height: 26px;
 }
 
 .cart-badge__counter {
@@ -35,4 +35,16 @@
     height: 24px;
     right: -2px;
     top: -2px;
+}
+
+@media (min-width: 768px) {
+    .modal__button {
+        width: 70px;
+        height: 70px;
+    }
+
+    .packet {
+        width: 40px;
+        height: 40px;
+    }
 }
