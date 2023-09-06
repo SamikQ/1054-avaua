@@ -109,7 +109,7 @@ export class Cart {
   }
 
   saveCart() {
-    localStorage.setItem("cart", JSON.stringify(Object.values(this.cart)));;
+    localStorage.setItem("cart", JSON.stringify(this.cart));
   }
   async order(ev) {
     if (Object.keys(this.cart).length === 0)
@@ -141,27 +141,3 @@ export class Cart {
   }
 }
 new Cart();
-
-const orderForm = document.querySelector(".cart");
-const cartContent = document.querySelector(".cart__content");
-const cartBadge = document.querySelector(".cart-badge");
--
-function isOrderFormOpen() {
-  return !orderForm.classList.contains("cart__hidden");
-}
-
-document.querySelector(".cart-badge").addEventListener("click", () => {
-  if (!isOrderFormOpen()) {
-    orderForm.classList.remove("cart__hidden");
-    cartContent.classList.remove("cart__hidden");
-    cartBadge.classList.add("hidden");
-  }
-});
-
-document.querySelector(".cart__header-close").addEventListener("click", () => {
-  if (isOrderFormOpen()) {
-    orderForm.classList.add("cart__hidden");
-    cartContent.classList.add("cart__hidden");
-    cartBadge.classList.remove("hidden");
-  }
-});
