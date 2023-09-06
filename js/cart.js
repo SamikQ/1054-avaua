@@ -109,20 +109,20 @@ export class Cart {
   }
 
   saveCart() {
-    localStorage.setItem("cart", JSON.stringify(this.cart));
+    localStorage.setItem("cart", JSON.stringify(Object.values(this.cart)));;
   }
   async order(ev) {
     if (Object.keys(this.cart).length === 0)
-      return showAlert("Please choose products to order", false);
+      return alert("Please choose products to order", false);
     const form = document.querySelector(".form-contacts");
     if (!form.checkValidity())
-      return showAlert("Please fill form correctly", false);
+      return alert("Please fill form correctly", false);
     ev.preventDefault();
     const data = new FormData();
     data.append("cart", JSON.stringify(this.cart));
     data.append("name", form.querySelector("input[name=name]").value);
     data.append("email", form.querySelector("input[name=email]").value);
-    fetch("https://formspree.io/f/mrgjwwro", {
+    fetch("https://formspree.io/f/xqkvqgry", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -134,7 +134,7 @@ export class Cart {
         this.cart = {};
         this.saveCart();
         this.renderCart();
-        showAlert("Thank you! ");
+        alert("Thank you! ");
         document.querySelector("#modal-cart .close-btn").click();
       })
       .catch((error) => showAlert("There is an error: " + error, false));
@@ -145,8 +145,7 @@ new Cart();
 const orderForm = document.querySelector(".cart");
 const cartContent = document.querySelector(".cart__content");
 const cartBadge = document.querySelector(".cart-badge");
-
-// Функція, яка перевіряє, чи orderForm відкрита
+-
 function isOrderFormOpen() {
   return !orderForm.classList.contains("cart__hidden");
 }
@@ -166,5 +165,3 @@ document.querySelector(".cart__header-close").addEventListener("click", () => {
     cartBadge.classList.remove("hidden");
   }
 });
-
-

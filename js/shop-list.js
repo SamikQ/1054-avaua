@@ -33,11 +33,13 @@ export class ProductList {
   nextSlide() {
     this.currentCarouselSlide = this.currentCarouselSlide + 1 >= this.slides.length ? 0 : this.currentCarouselSlide + 1;
     this.renderSlide();
+    this.addEventListeners()
   }
 
   prevSlide() {
     this.currentCarouselSlide = this.currentCarouselSlide - 1 < 0 ? this.slides.length - 1 : this.currentCarouselSlide - 1;
     this.renderSlide();
+    this.addEventListeners()
   }
 
   renderSlide() {
@@ -53,7 +55,6 @@ export class ProductList {
     }
     productsContainer.innerHTML = productDomString;
     this.currentDisplayedSlide = this.currentCarouselSlide;
-    this.addEventListeners();
   }
 
   createProductDomString(product) {
@@ -79,6 +80,7 @@ export class ProductList {
         addBtn.addEventListener('click', (event) => {
           event.preventDefault();
           this.addProductToCart(event);
+          document.querySelector('.cart-badge').classList.remove('cart__hidden');
         });
       }
     });
@@ -90,6 +92,20 @@ export class ProductList {
   }
 }
 new ProductList();
+
+const orderForm = document.querySelector('.cart');
+
+document.querySelector('.cart-badge').addEventListener('click', () => {
+  orderForm.classList.remove('cart__hidden');
+  document.querySelector('.cart__content').classList.remove('cart__hidden');
+  document.querySelector('.cart-badge').classList.add('hidden');
+});
+
+document.querySelector('.cart__header-close').addEventListener('click', () => {
+  orderForm.classList.add('cart__hidden');
+  document.querySelector('.cart__content').classList.add('cart__hidden');
+  document.querySelector('.cart-badge').classList.remove('hidden');
+});
 
 //   if (window.matchMedia('(min-width: 990px)').matches) {
 //     for (let i = currentSlide; i < currentSlide + 3; i++) {
@@ -140,16 +156,3 @@ new ProductList();
 //     });
 //   });
 
-const orderForm = document.querySelector('.cart');
-
-document.querySelector('.cart-badge').addEventListener('click', () => {
-  orderForm.classList.remove('cart__hidden');
-  document.querySelector('.cart__content').classList.remove('cart__hidden');
-  document.querySelector('.cart-badge').classList.add('hidden');
-});
-
-document.querySelector('.cart__header-close').addEventListener('click', () => {
-  orderForm.classList.add('cart__hidden');
-  document.querySelector('.cart__content').classList.add('cart__hidden');
-  document.querySelector('.cart-badge').classList.remove('hidden');
-});
